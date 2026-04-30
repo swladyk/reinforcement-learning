@@ -1,0 +1,17 @@
+{
+    "name": "Reinforcement Learning (Julia)",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "julialang.language-julia",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "postCreateCommand": "julia --project=/workspace -e 'using Pkg; Pkg.instantiate()'"
+}
